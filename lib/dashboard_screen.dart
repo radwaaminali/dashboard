@@ -4,8 +4,9 @@ import 'package:myapp/topbar_widget.dart';
 import 'package:myapp/stats_cards.dart';
 import 'package:myapp/sales_chart.dart';
 import 'package:myapp/orders_table.dart';
-import 'package:myapp/orders_page.dart'; // ✅ صفحة الأوردر الجديدة
-import 'package:myapp/customers_page.dart'; // ✅ استيراد صفحة العملاء الجديدة
+import 'package:myapp/orders_page.dart';
+import 'package:myapp/customers_page.dart';
+import 'package:myapp/products_page.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -41,10 +42,13 @@ class DashboardScreenState extends State<DashboardScreen> {
         );
 
       case "Orders":
-        return const OrdersPage(); // ✅ استدعاء صفحة الأوردر الجديدة
+        return const OrdersPage();
 
-      case "Customers": // ✅ إضافة هذه الحالة لعرض صفحة العملاء
-        return const CustomersPage(); // استدعاء صفحة العملاء الجديدة
+      case "Customers":
+        return const CustomersPage(); // ✅ صفحة العملاء الفعلية
+
+      case "Products":
+        return const ProductsPage(); // ✅ صفحة المنتجات الفعلية
 
       default:
         return Center(
